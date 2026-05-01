@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { LayoutDashboard, Users, GraduationCap, BookOpen, BarChart3, Tag, Receipt, KeyRound } from "lucide-react";
+import { LayoutDashboard, Users, GraduationCap, BookOpen, BarChart3, Tag, Receipt, KeyRound, Video } from "lucide-react";
 import { DashboardShell } from "@/components/DashboardShell";
 import { AdminOverview } from "./admin/AdminOverview";
 import { AdminCandidates } from "./admin/AdminCandidates";
@@ -12,6 +12,7 @@ import { AdminAnalytics } from "./admin/AdminAnalytics";
 import { AdminPricing } from "./admin/AdminPricing";
 import { AdminSubscriptions } from "./admin/AdminSubscriptions";
 import { AdminOverrides } from "./admin/AdminOverrides";
+import { AdminMeetings } from "./admin/AdminMeetings";   // ← NEW
 import { CandidateDetail } from "./shared/CandidateDetail";
 
 const items = [
@@ -19,6 +20,7 @@ const items = [
   { to: "/admin/candidates", label: "Candidates", icon: GraduationCap },
   { to: "/admin/tutors", label: "Tutors", icon: Users },
   { to: "/admin/courses", label: "Courses", icon: BookOpen },
+  { to: "/admin/meetings", label: "Meetings", icon: Video },          // ← NEW
   { to: "/admin/pricing", label: "Pricing", icon: Tag },
   { to: "/admin/subscriptions", label: "Subscriptions", icon: Receipt },
   { to: "/admin/overrides", label: "Free Access", icon: KeyRound },
@@ -30,6 +32,7 @@ const titles: Record<string, string> = {
   "/admin/candidates": "Candidates",
   "/admin/tutors": "Tutors",
   "/admin/courses": "Courses",
+  "/admin/meetings": "Meetings",                                       // ← NEW
   "/admin/pricing": "Pricing",
   "/admin/subscriptions": "Subscriptions",
   "/admin/overrides": "Free Access",
@@ -65,6 +68,7 @@ const Admin = () => (
       <Route path="courses" element={<AdminCourses />} />
       <Route path="courses/:courseId/lessons" element={<AdminLessons />} />
       <Route path="lessons/:lessonId" element={<AdminLessonEditor />} />
+      <Route path="meetings" element={<AdminMeetings />} />            {/* ← NEW */}
       <Route path="pricing" element={<AdminPricing />} />
       <Route path="subscriptions" element={<AdminSubscriptions />} />
       <Route path="overrides" element={<AdminOverrides />} />

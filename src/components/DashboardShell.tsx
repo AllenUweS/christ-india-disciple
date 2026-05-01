@@ -6,6 +6,7 @@ import { Sparkles, LogOut, Menu, X, ChevronRight } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import { BiblicalChatbot } from "@/components/BiblicalChatbot";
 
 interface NavItem {
   to: string;
@@ -122,6 +123,8 @@ export const DashboardShell = ({ title, items, children, badge }: Props) => {
 
   return (
     <div className="min-h-screen flex w-full">
+      {/* Biblical AI Chatbot — available on all dashboards */}
+      <BiblicalChatbot variant="dashboard" />
 
       {/* ── DESKTOP SIDEBAR ── */}
       <aside className="hidden md:flex w-64 shrink-0 flex-col border-r border-border/40 glass-strong">

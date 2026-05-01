@@ -245,3 +245,14 @@ thead, tbody tr {
   100% { transform: translate3d(-2%, 2%, 0) scale(1.02); }
 }
 
+
+/* Fix: remove border from chatbot input wrapper */
+.chatbot-input-wrapper,
+.chatbot-input-wrapper:focus,
+.chatbot-input-wrapper:focus-within,
+.chatbot-input-wrapper:focus-visible {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  ring: none !important;
+}
